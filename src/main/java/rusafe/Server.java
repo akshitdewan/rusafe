@@ -17,7 +17,8 @@ public class Server {
 
   @SuppressWarnings("restriction")
 public static void main(String[] args) throws Exception {
-	HttpServer server = HttpServer.create(new InetSocketAddress(Integer.parseInt(System.getenv().get("PORT"))), 0);
+	int port = System.getenv().get("PORT") != null ? Integer.parseInt(System.getenv().get("PORT")): 8080;
+	HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
     server.createContext("/places", new MyHandler());
     server.setExecutor(null); // creates a default executor
     server.start();
@@ -27,7 +28,7 @@ public static void main(String[] args) throws Exception {
   @SuppressWarnings("restriction")
 static class MyHandler implements HttpHandler {
     public void handle(HttpExchange t) throws IOException {
-      byte [] response = "Hello World".getBytes();
+      byte [] response = GetURL.getData().getBytes();
       t.sendResponseHeaders(200, response.length);
       OutputStream os = t.getResponseBody();
       os.write(response);
