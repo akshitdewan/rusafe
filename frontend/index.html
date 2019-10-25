@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RU Safe</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Teko">
+    <style>
+        body {
+            background: white;
+            font-family: Teko;
+            color: black;
+        }
+        h1 {
+            color: rgb(210, 16, 46);
+            font-size: 80px;
+        }
+        h2 {
+            font-family:Arial, Helvetica, sans-serif;
+            color: black;
+            font-size: 20px;
+        }
+        img {
+            width: 20%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div style = "position: relative; left:30px; top: -60px;">
+    <h1> 
+    <img src="rutgers.png" alt="RU Safe" class="inline"/>
+    </h1>
+    </center>
+    </div>
+    <center>
+    <div style = "position: relative; left:30px; top: -110px;">
+    <h2> 
+    Welcome to our website!
+    </h2>
+    <h2>This site will show you crime in the New Brunswick area
+    </h2>
+    </center>
+    </div>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div style = "position: relative; top: -110px;">
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: {lat: 40.502439, lng: -74.451556},
+          zoom: 13
+        });
+        textByLine = "Prosper Street,Wyckoff Street,Bartlett Street,Easton Avenue,Bristol Street,Rockafeller Road,Mine Street,College Avenue,Union Street,French Street,Cogswell Place,Florence Street,Comstock Street,Jersey Avenue,Woodbridge Street,Central Avenue,Hamilton Street,Easton Avenue,Hamilton Street,Nichol Avenue,Seaman Street,Nichol Avenue,Handy Street,Senior Street,Wyckoff Street,Hiram Square,Richmond Street,Neilson Street,Somerset Street,Prospect Street,Harvey Street,Division Street,Somerset Street,Easton Avenue,George Street,Paterson Street,Delavan Street,Nichol Avenue,Jones Avenue,Nichol Avenue,Dix Street,Central Avenue,Baldwin Street,Jones Avenue,Nichol Avenue,Jones Avenue,Easton Avenue,Senior Street,Easton Avenue,Courtland Street,Senior Street,Wyckoff Street,Senior Street,Sicard Street,Senior Street,Wyckoff Street,Easton Avenue,Courtland Street,Harvey Street,Somerset Street,Robinson Street,Harvey Street,Easton Avenue,Courtland Street,Dix Street,Central Avenue,Dix Street,Dix Street,Central Avenue,Abeel Street,Remsen Avenue,Abeel Street,George Street,Delafield Street,Courtland Street,Hamilton Street,Division Street,Hamilton Street,Hamilton Street,Easton Avenue,College Avenue,Lipman Drive,Easton Avenue,Wyckoff Street,Plum Street,Plum Street,George Street,George Street,Somerset Street,George Street,Commercial Avenue,George Street,George Street,Bristol Street,Delafield Street,Stone Street,Easton Avenue,Sicard Street,Easton Avenue,Hamilton Street,Easton Avenue,Hamilton Street,Easton Avenue,High Street,Hamilton Street,Bishop Place,College Avenue,College Avenue,Delafield Street,Bristol Street,Easton Avenue,Hamilton Street,Delafield Street,Bristol Street,Delafield Street,Bristol Street,George Street,Union Street,Hamilton Street,Union Street,Hamilton Street,Senior Street,Wyckoff Street,Chapel Drive,Chem Drive,Delafield Street,Courtland Street,Stone Street,College Avenue,Easton Avenue,College Avenue,Hamilton Street,College Avenue,Hamilton Street,Guilden Street,Courtland Street,University Avenue,Jones Avenue,Seaman Street,Commercial Avenue,Rockafeller Road,Rockafeller Road,Hamilton Street,Easton Avenue,Condict Street,Guilden Street,Prosper Street,Easton Avenue,Prosper Street,College Avenue,Richardson Street,College Avenue,Sicard Street,Wyckoff Street,Joyce Kilmer Avenue,Joyce Kilmer Avenue,Division Street,Easton Avenue,Comstock Street,Commercial Avenue,Division Street,Hamilton Street,Louis Street,Church Street,Harvey Street,French Street,Somerset Street,New Street,College Avenue,George Street,Seminary Place,Handy Street,Commercial Avenue,Jones Avenue,Handy Street,Commercial Avenue,Union Street,Huntington Street,College Avenue,Morris Street,Nielsen Street,Tabernacle Street,Easton Avenue,College Farm Road,Ag Extension Way,George Street,Commercial Avenue,Harvey Street,French Street,Harvey Street,Somerset Street,Commercial Avenue,Commercial Avenue,Morrell Street,Wyckoff Street,Mine Street,Easton Avenue,Nichol Avenue,Handy Street,Dudley Road,Senior Street,Easton Avenue,Nichol Avenue,Handy Street,Jones Avenue,Nichol Avenue,Suydam Street,George Street,Bishop Place,College Avenue,Maple Street,Somerset Street,Easton Avenue,Mine Street,College Avenue,Dudley Road,Wyckoff Street,Easton Avenue,Hartwell Street,College Avenue,College Avenue,College Avenue,Bishop Place,College Avenue,Bishop Place,Easton Avenue,Easton Avenue,Hamilton Street,George Street,Central Avenue,Central Avenue,Dix Street,Courtland Street,Prosper Street,Easton Avenue,Guilden Street,Prosper Street,Guilden Street,Cedar Lane,Cedar Lane,College Avenue,Huntington Street,College Avenue,Sicard Street,Huntington Street,Easton Avenue,Robinson Street,Central Avenue,Pine Street,Albany Street,Easton Avenue,George Street,Morrell Street,Bartlett Street,Hamilton Street,Division Street,Hamilton Street,Division Street,High Street,Morrell Street,Bartlett Street,Morrell Street,Sicard Street,Nichol Avenue,Suydam Street,Nichol Avenue,Suydam Street,Easton Avenue,Easton Avenue,Hamilton Street,College Avenue,Hamilton Street,George Street,Morris Street,Courtland Street,Delafield Street,".split(",");
+
+        fetch("https://rusafe.herokuapp.com/places")
+        .then((response) => response.text())
+        .then((response) => {
+        console.log(response)
+        response = response.split(",")
+        var array = [];
+        var i;
+        for(i=0;i<response.length;i++)
+        {
+            console.log(textByLine[i]+"   asdkfkahsdjfh");
+            street = textByLine[i];
+        if (street =="4th Street"){   
+        Lat = 40.476180;
+        Long=  -74.464030; 
+        }
+        else if (street == "5th Street"){   
+        Lat = 40.474940;
+        Long=  -74.463480; 
+        }
+        else if (street == "6th Street"){
+            Lat = 40.475310;
+            Long=  -74.465570; 
+        }
+        else if (street == "7th Street") {   
+        Lat = 40.474760;
+        Long =  -74.466140;
+        } 
+        else if (street == "8th Street") {
+        Lat = 40.474230;
+        Long = -74.466700;
+        }
+        else if (street == "9th Street") {   
+        Lat = 40.473660;
+        Long = -74.467300
+        }
+        else if  (street == "Abeel Street") {    
+        Lat = 40.489240;
+        Long = -74.440260;
+        }
+        else if (street == "Adams Place") {   
+        Lat = 40.481730;
+        Long = -74.480920;
+        }
+        else if (street == "Albany Street") {  
+        Lat = 40.496910;
+        Long = -74.443190;
+        }
+        else if (street == "Alder Court") {
+        Lat = 40.479220;
+        Long = -74.452790;
+        }
+        else if (street == "Alexander Street") {   
+        Lat = 40.492220;
+        Long =  -74.455320;
+        } 
+        else if (street == "Antile Road") {    
+        Lat = 40.486260;
+        Long = -74.413840;
+        }
+        else if (street == "Baldwin Street" ) {   
+        Lat = 40.482922;
+        Long = -74.442009;
+        }
+        else if (street == "Ball Street") {    
+        Lat = 40.491870;
+        Long = -74.458210;
+        }
+        else if (street == "Bartlett Street") {
+        Lat = 40.501340;
+        Long = -74.452640;
+        }
+        else if (street == "Bayard Street") {    
+        Lat = 40.494010;
+        Long = -74.446540;
+        }
+        else if (street == "Bergen Court") {
+        Lat = 40.483440;
+        Long = -74.475860;
+        }
+        else if (street == "Bethany Street") {   
+        Lat = 40.492420;
+        Long = -74.456620;
+        } 
+        else if (street == "Biel Road W") {
+        Lat = 40.478510;
+        Long = -74.430040;
+        }
+        else if (street == "Birch Court") {    
+        Lat = 40.479220;
+        Long = -74.452790;
+        }
+        else if (street == "Bishop Place"){
+        Lat = 40.502460;
+        Long = -74.449050;
+        }
+        else if (street == "Bishop Street") {    
+        Lat = 40.487700;
+        Long = -74.438010;
+        }
+        else if (street == "Bowser Road") {
+        Lat = 40.675660;
+        Long = -75.159200;
+        }
+        else if (street == "Bristol Street") {    
+        Lat = 40.499450;
+        Long = -74.455070;
+        }
+        else if (street == "Brookside Avenue"){
+        Lat = 40.493980;
+        Long = -74.456970;
+        }   
+        else if (street == "Buccleuch Place") {    
+        Lat = 40.502440;
+        Long = -74.462930;
+        }
+        else if (street == "Burnet Street") {    
+        Lat =40.485928;
+        Long = -74.426358;
+        }
+        else if (street == "Camner Avenue") {    
+        Lat = 40.482547;
+        Long = -74.480867;
+        }
+        else if (street == "Carman Street") {
+        Lat = 40.488898;
+        Long = -74.441148;
+        }
+        else if (street == "Carpender Road") {  
+        Lat = 40.486469;
+        Long = -74.426335;
+        } 
+        else if (street == "Carter Road") {
+        Lat = 40.483931;
+        Long = -74.476777;
+        }
+        else if(street == "Cedar Court") {
+        Lat = 40.478304;
+        Long = -74.451526;
+        }
+        else if (street == "Central Avenue") {
+        Lat = 40.498520;
+        Long = -74.456270;
+        } 
+        else if (street == "Charles Street") {
+        Lat = 40.478659;
+        Long = -74.459355;
+        }
+        else if (street == "Chester Circle") {
+        Lat = 40.487042;
+        Long = -74.41927;
+        }
+        else if (street == "Church Street") {    
+        Lat = 40.495947;
+        Long = -74.444119;
+        }
+        else if (street == "Class Place") {
+        Lat = 40.483561;
+        Long = -74.477786;
+        }
+        else if (street == "Cliffe Street") {
+        Lat = 40.476653;
+        Long = 40.476653;
+        }
+        else if (street == "Cobb Road"){
+        Lat = 40.482704;
+        Long = -74.429387;
+        }
+        else if (street == "Cogswell Place") {
+        Lat = 40.490892;
+        Long = -74.45786;
+        }
+        else if (street == "College Avenue") {    
+        Lat = 40.50257;
+        Long = -74.451242;
+        }
+        else if (street == "College Farm Road") {    
+        Lat = 40.468345;
+        Long = -74.433246;
+        }
+        else if (street == "Columbus Place") {
+        Lat = 40.485782;
+        Long = -74.457272;
+        }
+        else if (street == "Commercial Avenue") {    
+        Lat = 40.483577;
+        Long = -74.443753;
+        }
+        else if (street == "Comstock Street") {    
+        Lat = 40.480741;
+        Long = -74.441432;
+        }
+        else if (street == "Condict Street") {    
+        Lat = 40.497773;
+        Long = -74.449331;
+        }
+        else if (street == "Conger Avenue") {    
+        Lat = 40.476906;
+        Long = -74.441863;
+        }
+        else if (street == "Constitution Square") {    
+        Lat = 40.478637;
+        Long = -74.42718;
+        }
+        else if (street == "Cook Road") {    
+        Lat = 40.484538;
+        Long = -74.406831;
+        }
+        else if (street == "Cotter Drive") {
+        Lat = 40.483044;
+        Long = -74.422752;
+        }
+        else if (street == "County Road 617") {    
+        Lat = 40.495921;
+        Long = -74.44413;
+        }
+        else if (street == "County Road 680") { 
+        Lat = 40.495921;
+        Long = -74.444139;
+        }
+        else if (street == "County Road 693") { 
+        Lat = 40.495921;
+        Long = -74.444139;
+        } 
+        else if (street == "Division Street") {
+        Lat = 40.495691;
+        Long = -74.450799;
+        }   
+        else if (street == "Easton Avenue") {   
+        Lat = 40.501463;
+        Long = -74.458152;
+        }  
+        else if (street == "Hamilton Street") {  
+        Lat = 40.496409;
+        Long = -74.456207;
+        }     
+        else if (street == "Handy Street") {  
+        Lat = 40.484975;
+        Long = -74.443873;
+        }  
+        else if (street == "Hiram Square") {    
+        Lat = 40.495278;
+        Long = -74.441369;
+        }
+        else if (street == "Neilson Street") {    
+        Lat = 40.491695;
+        Long = -74.441088;
+        }
+        else if (street == "Nichol Avenue") {    
+        Lat  = 40.480428;
+        Long = -74.44204;
+        }
+        else if (street == "Prospect Street") {  
+        Lat = 40.493462;
+        Long = -74.451953;
+        }  
+        else if (street == "Prosper Street") {   
+        Lat = 40.500508;
+        Long = -74.452106;
+        }    
+        else if (street == "Richmond Street") {    
+        Lat = 40.494147;
+        Long = -74.440086;
+        }   
+        else if (street == "Seaman Street") {   
+        Lat = 40.485513;
+        Long = -74.443254;
+        }   
+        else if (street == "Sicard Street") {   
+        Lat = 40.500853;
+        Long = -74.452136;
+        }   
+        else if (street == "Somerset Street") {
+        Lat = 40.489092;
+        Long = -74.463724;
+        }  
+        else if (street == "Stone Street") {   
+        Lat = 40.50084;
+        Long = -74.451923;  
+        } 
+        else if (street == "Union Street") {   
+        Lat = 40.499581;
+        Long = -74.450489; 
+        } 
+        else if (street == "Wyckoff Street") {   
+        Lat = 40.501512;
+        Long =  -74.45536;
+        }
+        
+
+        array.push(new google.maps.Marker({
+            position:{lat: Lat, lng: Long},
+            map:map,
+            }));
+        }
+        //add marker at 4th street that says 4th streer
+        })
+       
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjJO1A3jqUY0ZJA8v-blhrAa_se8EkDOM&callback=initMap"
+    async defer></script>
+    </div>
+  </body>
+</html>
