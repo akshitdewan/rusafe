@@ -17,7 +17,7 @@ public class Server {
 
   @SuppressWarnings("restriction")
 public static void main(String[] args) throws Exception {
-	HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
+	HttpServer server = HttpServer.create(new InetSocketAddress(Integer.parseInt(System.getenv().get("PORT"))), 0);
     server.createContext("/places", new MyHandler());
     server.setExecutor(null); // creates a default executor
     server.start();
